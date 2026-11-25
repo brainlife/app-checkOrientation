@@ -10,9 +10,9 @@
   <a href="https://github.com/brainlife/app-checkOrientation/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-> 📍 **This branch, `dtiinit`, is the brainlife.io App Check dtiInit Orientation** ([doi:10.25663/bl.app.21](https://doi.org/10.25663/bl.app.21)). The other Apps in this repository are listed under **Versions on brainlife.io** below.
+> **This branch, `dtiinit`, is the brainlife.io App Check dtiInit Orientation** ([doi:10.25663/bl.app.21](https://doi.org/10.25663/bl.app.21)). The other Apps in this repository are listed under **Versions on brainlife.io** below.
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -22,18 +22,18 @@ Reads the aligned DWI path from the dtiInit dt6.json, runs fslorient on it and w
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/dtiinit` |
-| 📤 **Outputs** | `raw` |
-| ⚙️ **Resources** | 8 CPUs · 0.08 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/bl.app.21](https://doi.org/10.25663/bl.app.21) |
+| **Inputs** | `neuro/dtiinit` |
+| **Outputs** | `raw` |
+| **Resources** | 8 CPUs · 0.08 h walltime |
+| **Run it** | [doi.org/10.25663/bl.app.21](https://doi.org/10.25663/bl.app.21) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `0` | `neuro/dtiinit` | yes | dtiInit output; the aligned DWI listed in dt6.json (files.alignedDwRaw) is checked. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -41,7 +41,7 @@ Reads the aligned DWI path from the dtiInit dt6.json, runs fslorient on it and w
 
 <!-- brainlife-app:end -->
 
-## 🏷️ Versions on brainlife.io
+## Versions on brainlife.io
 
 This repository hosts three quality-control Apps. They do the same check on different datatypes; none of them changes or reorients the image.
 
@@ -51,13 +51,13 @@ This repository hosts three quality-control Apps. They do the same check on diff
 | Check DWI Orientation | `neuro/dwi` | [`master`](https://github.com/brainlife/app-checkOrientation/tree/master) | [doi:10.25663/bl.app.20](https://doi.org/10.25663/bl.app.20) | current |
 | **Check dtiInit Orientation** (this branch) | `neuro/dtiinit` | [`dtiinit`](https://github.com/brainlife/app-checkOrientation/tree/dtiinit) | [doi:10.25663/bl.app.21](https://doi.org/10.25663/bl.app.21) | available |
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App for your datatype (for example [doi.org/10.25663/bl.app.19](https://doi.org/10.25663/bl.app.19) for a T1-weighted image), choose the dataset from your project and press **Execute**. The App has no options. The orientation it finds (`NEUROLOGICAL` or `RADIOLOGICAL`) is shown on the task's results on brainlife.io; the output dataset itself is only a placeholder.
 
-### 💻 Locally
+### Locally
 
 The `master` branch (T1 and DWI Apps) needs [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqlang.github.io/jq/); FSL 5.0.9 is pulled from the `brainlife/fsl:5.0.9` container.
 
@@ -78,17 +78,17 @@ The `master` branch (T1 and DWI Apps) needs [Singularity/Apptainer](https://appt
 
 The `dtiinit` branch instead reads a `dtiinit` key (a dtiInit output directory), checks the aligned DWI listed in its `dt6.json` (`files.alignedDwRaw`) and calls `fslorient` from a host FSL installation, without a container.
 
-## 📦 Outputs
+## Outputs
 
 - `product.json`: the orientation reported by `fslorient`, for example `{"orientation" : "NEUROLOGICAL"}`.
 
 No image data is written.
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **Check dtiInit Orientation does not start**: the `dtiinit` branch relies on a host FSL installation and legacy Indiana University HPC environment variables (`ENV`, `SERVICE_DIR`) rather than a container, so it may not run on current resources. To check a DWI image, use Check DWI Orientation instead.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -98,12 +98,12 @@ No image data is written.
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Scientific Data* 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
-## 👥 Authors
+## Authors
 
 - Franco Pestilli (project director)
 - Lindsey Kitchell
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -122,6 +122,6 @@ No image data is written.
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](https://github.com/brainlife/app-checkOrientation/blob/master/LICENSE). FSL itself is distributed under its own [license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence).
